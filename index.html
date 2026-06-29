@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Ejaz — Data Analyst</title>
+<meta name="description" content="Data analyst portfolio for Muhammad Ejaz — Power BI, Tableau, SQL, Excel and Python dashboards, pulled live from GitHub.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="brand">Muhammad Ejaz<span class="brand-dot">.</span></a>
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://github.com/ejazmustafavi-DataAnalyst" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Data Analyst — Doha, Qatar</p>
+        <h1>I turn raw data into decisions you can act on.</h1>
+        <p class="hero-sub">Dashboards and analysis in Power&nbsp;BI, Tableau, SQL, Excel, and Python — pulled straight from my GitHub below, automatically.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">See the work</a>
+          <a class="btn btn-ghost" href="mailto:ejazmustafavi@gmail.com">Say hello</a>
+        </div>
+      </div>
+
+      <div class="hero-query">
+        <pre class="query-line"><code id="queryLine">$ fetch --user ejazmustafavi-DataAnalyst --repos<span class="cursor" aria-hidden="true">▌</span></code></pre>
+        <div class="stat-grid" id="statGrid" hidden>
+          <div class="stat">
+            <span class="stat-num" id="statRepos">0</span>
+            <span class="stat-label">repositories</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="statStars">0</span>
+            <span class="stat-label">stars earned</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" id="statLangs">0</span>
+            <span class="stat-label">languages</span>
+          </div>
+          <div class="stat">
+            <span class="stat-text" id="statUpdated">—</span>
+            <span class="stat-label">last shipped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Repository feed</p>
+        <h2>Every project, straight from GitHub.</h2>
+        <p class="section-sub">This list pulls live from the GitHub API — add a repo over there and it shows up here on the next visit. No copy‑pasting.</p>
+      </div>
+
+      <div class="filter-bar" id="filterBar" role="group" aria-label="Filter projects by tool"></div>
+
+      <div class="card-grid" id="cardGrid" aria-live="polite"></div>
+
+      <p class="empty-state" id="emptyState" hidden>No repositories match that filter yet.</p>
+      <p class="error-state" id="errorState" hidden>
+        Couldn't reach the GitHub API just now.
+        <a href="https://github.com/ejazmustafavi-DataAnalyst?tab=repositories" target="_blank" rel="noopener">View repositories directly on GitHub ↗</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>From spreadsheets to stories.</h2>
+        <p>I'm a data analyst based in Doha, Qatar, focused on turning messy, raw data into dashboards and reports that people actually use — for finance, sales, HR, and operations teams.</p>
+        <p>My day-to-day toolkit spans Python for cleaning and exploring data, SQL for querying it, and Power BI, Tableau, and Excel for putting it in front of decision-makers.</p>
+      </div>
+      <ul class="tool-list">
+        <li><span class="dot dot-indigo"></span>Python — pandas, NumPy, EDA</li>
+        <li><span class="dot dot-teal"></span>SQL — querying &amp; analysis</li>
+        <li><span class="dot dot-amber"></span>Power BI — interactive dashboards</li>
+        <li><span class="dot dot-coral"></span>Tableau — data visualization</li>
+        <li><span class="dot dot-sage"></span>Excel — pivot tables &amp; modeling</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Have a dataset that needs a story?</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:ejazmustafavi@gmail.com">ejazmustafavi@gmail.com</a>
+        <a href="https://www.linkedin.com/in/mejazmustafavi" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/ejazmustafavi-DataAnalyst" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>© <span id="year"></span> Muhammad Ejaz. Built with HTML, CSS, and the GitHub API.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
