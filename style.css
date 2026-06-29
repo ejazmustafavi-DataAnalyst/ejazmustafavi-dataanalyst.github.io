@@ -1,8 +1,0 @@
-body{font-family:Arial,sans-serif;margin:0;background:#f5f7fb;color:#222;line-height:1.6}
-.hero{background:#2563eb;color:#fff;padding:2rem}
-nav{display:flex;gap:1rem;align-items:center}
-nav h2{margin-right:auto}
-a{color:white;text-decoration:none}
-main{max-width:960px;margin:auto;padding:2rem}
-.card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.1);margin:1rem 0}
-.btn{background:#fff;color:#2563eb;padding:.7rem 1rem;border-radius:6px}
