@@ -641,8 +641,12 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .cert-thumb-img {
   background: var(--bg);
   padding: 0;
+  display: block;
+  position: relative;
 }
 .cert-thumb-img img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
