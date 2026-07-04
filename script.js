@@ -7,6 +7,11 @@ const RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_USERNAME}/${GITHUB_
 const THUMB_BASE = `${RAW_BASE}/thumbnail/`;
 const THUMB_FALLBACK = `${THUMB_BASE}thumTemp.png`;
 
+const EXCLUDED_REPOS = [
+  "ejazmustafavi-dataanalyst.github.io",
+  "ejazmustafavi-DataAnalyst"
+];
+
 const PINNED = [
   "BankDataAnalysisPBI",
   "CreditCardFinancialReportPBI",
@@ -84,15 +89,27 @@ function buildCertificates() {
   if (!grid) return;
   grid.innerHTML = "";
   CERTIFICATES.forEach(cert => {
-    const url = `${RAW_BASE}/certificates/${encodeURIComponent(cert.file)}`;
+    const pdfUrl = `${RAW_BASE}/certificates/${encodeURIComponent(cert.file)}`;
+    const pngName = cert.file.replace(/\.pdf$/i, ".png");
+    const imgUrl  = `${RAW_BASE}/certificates/${encodeURIComponent(pngName)}`;
     const card = document.createElement("div");
     card.className = "cert-card";
     card.innerHTML = `
-      <div class="cert-thumb">${cert.icon}</div>
+      <div class="cert-thumb cert-thumb-img">
+        <img
+          src="${imgUrl}"
+          alt="${cert.name}"
+          loading="lazy"
+          onerror="this.style.display='none'; this.closest('.cert-thumb-img').innerHTML='<span style=\\"font-size:44px\\">${cert.icon}</span>';"
+        >
+      </div>
       <div class="cert-body">
         <p class="cert-name">${cert.name}</p>
         <p class="cert-issuer">${cert.issuer}</p>
-        <a class="cert-link" href="${url}" target="_blank" rel="noopener">View Certificate ↗</a>
+        <div class="cert-actions">
+          <a class="cert-link" href="${pdfUrl}" target="_blank" rel="noopener">View ↗</a>
+          <a class="cert-link cert-download" href="${pdfUrl}" download rel="noopener">Download PDF ↓</a>
+        </div>
       </div>`;
     grid.appendChild(card);
   });
@@ -246,6 +263,7 @@ async function init() {
 
     allRepos = data
       .filter(r => !r.fork)
+      .filter(r => !EXCLUDED_REPOS.map(e => e.toLowerCase()).includes(r.name.toLowerCase()))
       .sort((a, b) => {
         const aPin = PINNED.includes(a.name) ? 0 : 1;
         const bPin = PINNED.includes(b.name) ? 0 : 1;
