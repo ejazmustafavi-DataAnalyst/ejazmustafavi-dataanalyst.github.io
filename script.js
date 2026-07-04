@@ -100,7 +100,7 @@ function buildCertificates() {
           src="${imgUrl}"
           alt="${cert.name}"
           loading="lazy"
-          onerror="this.style.display='none'; this.closest('.cert-thumb-img').innerHTML='<span style=\\"font-size:44px\\">${cert.icon}</span>';"
+          onerror="this.style.display='none'; this.closest('.cert-thumb-img').innerHTML='<span style=\\"font-size:44px;display:flex;align-items:center;justify-content:center;height:100%\\">${cert.icon}</span>';"
         >
       </div>
       <div class="cert-body">
@@ -108,7 +108,7 @@ function buildCertificates() {
         <p class="cert-issuer">${cert.issuer}</p>
         <div class="cert-actions">
           <a class="cert-link" href="${pdfUrl}" target="_blank" rel="noopener">View ↗</a>
-          <a class="cert-link cert-download" href="${pdfUrl}" download rel="noopener">Download PDF ↓</a>
+          <a class="cert-link cert-download" href="${pdfUrl}" download>Download PDF ↓</a>
         </div>
       </div>`;
     grid.appendChild(card);
