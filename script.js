@@ -17,7 +17,7 @@ const PINNED = [
   "Decodelabs_internship_projects",
   "BankDataAnalysisPBI",
   "CreditCardFinancialReportPBI",
-   "CarSaleAnalysis",
+  "CarSaleAnalysis",
   "Adventure_Work_Sale",
   "HR_DataAnalyticsDashboard",
   "SaleProfitExcel"
