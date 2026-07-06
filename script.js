@@ -21,19 +21,19 @@ const PINNED = [
   "Adventure_Work_Sale",
   "HR_DataAnalyticsDashboard",
   "SaleProfitExcel"
-]; 
+];
 
 const CERTIFICATES = [
-  { name: "Google Data Analytics Professional Certificate",             file: "Google DataAnalytics_certificate.pdf",        issuer: "Google",      icon: "🎓" },
-  { name: "Google Business Intelligence  Certificate",                  file: "google business intelligence.pdf",             issuer: "Google",      icon: "📊" },
-  { name: "Data Analytics & Business Intelligence by DigiSkill Certificate",      file: "DataAnalytics_Certificate_by_DigiSkill.pdf",  issuer: "DigiSkill",   icon: "💡" },
-  { name: "Decodelabs Data Analyst internship Certificate",                  file: "Decode Data Analyst_Certificate.pdf",          issuer: "Decodelabs",  icon: "🔍" },
-  { name: "Nexus-AI Data Analyst internship Certificate",                  file: "Nexus Data Analyst Certificate.pdf",           issuer: "Nexus AI",    icon: "🤖" },
-  { name: "Google Batch Certificate",                                    file: "google batch.pdf",                             issuer: "Google",      icon: "📋" },
-  { name: "Power BI & AI Certificate",                               file: "PowerBI with AI certificate.pdf",              issuer: "Exodus Experts",   icon: "📈" },
-  { name: "Power BI Certificate",                                        file: "powerBI certificate.pdf",                      issuer: "Anexas Europe(UAE)",   icon: "📉" },
-  { name: "Advanced MS Excel Certificate",                               file: "advance ms excel Certificate.pdf",            issuer: "Alpha Training Center Qatar",   icon: "📗" },
-  { name: "Creative Writing Certificate",                                file: "creative writing certificate.pdf",              issuer: "DigiSkill",    icon: "🏅" },
+  { name: "Google Data Analytics",            file: "Google DataAnalytics_certificate.pdf",        issuer: "Google",      icon: "🎓" },
+  { name: "Google Business Intelligence",     file: "google business intelligence.pdf",             issuer: "Google",      icon: "📊" },
+  { name: "Google Batch Certificate",         file: "google batch.pdf",                             issuer: "Google",      icon: "📋" },
+  { name: "Data Analytics by DigiSkill",      file: "DataAnalytics_Certificate_by_DigiSkill.pdf",  issuer: "DigiSkill",   icon: "💡" },
+  { name: "Decode Data Analyst",              file: "Decode Data Analyst_Certificate.pdf",          issuer: "Decodelabs",  icon: "🔍" },
+  { name: "Nexus Data Analyst",               file: "Nexus Data Analyst Certificate.pdf",           issuer: "Nexus AI",    icon: "🤖" },
+  { name: "Power BI with AI",                 file: "PowerBI with AI certificate.pdf",              issuer: "Microsoft",   icon: "📈" },
+  { name: "Power BI Certificate",             file: "powerBI certificate.pdf",                      issuer: "Microsoft",   icon: "📉" },
+  { name: "Advanced MS Excel",                file: "advance ms excel Certificate .pdf",            issuer: "Microsoft",   icon: "📗" },
+  { name: "Certified Data Analytics & BI",    file: "Certified in Data Analytics.pdf",              issuer: "Coursera",    icon: "🏅" },
 ];
 
 const TAG_META = {
@@ -90,29 +90,67 @@ function buildCertificates() {
   const grid = $("certGrid");
   if (!grid) return;
   grid.innerHTML = "";
+
   CERTIFICATES.forEach(cert => {
     const pdfUrl = `${RAW_BASE}/certificates/${encodeURIComponent(cert.file)}`;
     const pngName = cert.file.replace(/\.pdf$/i, ".png");
     const imgUrl  = `${RAW_BASE}/certificates/${encodeURIComponent(pngName)}`;
+
+    // card
     const card = document.createElement("div");
     card.className = "cert-card";
-    card.innerHTML = `
-      <div class="cert-thumb cert-thumb-img">
-        <img
-          src="${imgUrl}"
-          alt="${cert.name}"
-          loading="lazy"
-          onerror="this.style.display='none'; this.closest('.cert-thumb-img').innerHTML='<span style=\\"font-size:44px;display:flex;align-items:center;justify-content:center;height:100%\\">${cert.icon}</span>';"
-        >
-      </div>
-      <div class="cert-body">
-        <p class="cert-name">${cert.name}</p>
-        <p class="cert-issuer">${cert.issuer}</p>
-        <div class="cert-actions">
-          <a class="cert-link" href="${pdfUrl}" target="_blank" rel="noopener">View ↗</a>
-          <a class="cert-link cert-download" href="${pdfUrl}" download>Download PDF ↓</a>
-        </div>
-      </div>`;
+
+    // thumb
+    const thumb = document.createElement("div");
+    thumb.className = "cert-thumb cert-thumb-img";
+
+    const img = document.createElement("img");
+    img.src = imgUrl;
+    img.alt = cert.name;
+    img.loading = "lazy";
+    img.addEventListener("error", function() {
+      // image failed — fall back to emoji icon
+      thumb.classList.remove("cert-thumb-img");
+      thumb.innerHTML = cert.icon;
+    });
+    thumb.appendChild(img);
+
+    // body
+    const body = document.createElement("div");
+    body.className = "cert-body";
+
+    const name = document.createElement("p");
+    name.className = "cert-name";
+    name.textContent = cert.name;
+
+    const issuer = document.createElement("p");
+    issuer.className = "cert-issuer";
+    issuer.textContent = cert.issuer;
+
+    const actions = document.createElement("div");
+    actions.className = "cert-actions";
+
+    const viewLink = document.createElement("a");
+    viewLink.className = "cert-link";
+    viewLink.href = pdfUrl;
+    viewLink.target = "_blank";
+    viewLink.rel = "noopener";
+    viewLink.textContent = "View ↗";
+
+    const dlLink = document.createElement("a");
+    dlLink.className = "cert-link cert-download";
+    dlLink.href = pdfUrl;
+    dlLink.download = "";
+    dlLink.textContent = "Download PDF ↓";
+
+    actions.appendChild(viewLink);
+    actions.appendChild(dlLink);
+    body.appendChild(name);
+    body.appendChild(issuer);
+    body.appendChild(actions);
+
+    card.appendChild(thumb);
+    card.appendChild(body);
     grid.appendChild(card);
   });
 }
