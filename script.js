@@ -24,14 +24,14 @@ const PINNED = [
 const CERTIFICATES = [
   { name: "Google Data Analytics Professional Certificate",             file: "Google DataAnalytics_certificate.pdf",        issuer: "Google",      icon: "🎓" },
   { name: "Google Business Intelligence  Certificate",                  file: "google business intelligence.pdf",             issuer: "Google",      icon: "📊" },
-  { name: "Google Batch Certificate",                                    file: "google batch.pdf",                             issuer: "Google",      icon: "📋" },
   { name: "Data Analytics & Business Intelligence by DigiSkill Certificate",      file: "DataAnalytics_Certificate_by_DigiSkill.pdf",  issuer: "DigiSkill",   icon: "💡" },
-  { name: "Decode Data Analyst internship Certificate",                  file: "Decode Data Analyst_Certificate.pdf",          issuer: "Decodelabs",  icon: "🔍" },
-  { name: "Nexus Data Analyst internship Certificate",                  file: "Nexus Data Analyst Certificate.pdf",           issuer: "Nexus AI",    icon: "🤖" },
-  { name: "Power BI with AI Certificate",                               file: "PowerBI with AI certificate.pdf",              issuer: "Exodus Experts",   icon: "📈" },
+  { name: "Decodelabs Data Analyst internship Certificate",                  file: "Decode Data Analyst_Certificate.pdf",          issuer: "Decodelabs",  icon: "🔍" },
+  { name: "Nexus-AI Data Analyst internship Certificate",                  file: "Nexus Data Analyst Certificate.pdf",           issuer: "Nexus AI",    icon: "🤖" },
+  { name: "Google Batch Certificate",                                    file: "google batch.pdf",                             issuer: "Google",      icon: "📋" },
+  { name: "Power BI & AI Certificate",                               file: "PowerBI with AI certificate.pdf",              issuer: "Exodus Experts",   icon: "📈" },
   { name: "Power BI Certificate",                                        file: "powerBI certificate.pdf",                      issuer: "Anexas Europe(UAE)",   icon: "📉" },
   { name: "Advanced MS Excel Certificate",                               file: "advance ms excel Certificate.pdf",            issuer: "Alpha Training Center Qatar",   icon: "📗" },
-  { name: "creative writing certificate",                                file: "creative writing certificate.pdf",              issuer: "DigiSkill",    icon: "🏅" },
+  { name: "Creative Writing Certificate",                                file: "creative writing certificate.pdf",              issuer: "DigiSkill",    icon: "🏅" },
 ];
 
 const TAG_META = {
