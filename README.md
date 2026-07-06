@@ -27,7 +27,16 @@ I enjoy solving business problems through data and continuously expanding my kno
 * **Other:** Data Cleaning, ETL, Dashboard Development, Business Intelligence
 
 ---
+## 📬 Contact
+ 
+| Channel | Link |
+|---------|------|
+| 🌐 Portfolio | [ejazmustafavi-dataanalyst.github.io](https://ejazmustafavi-dataanalyst.github.io) |
+| 💼 LinkedIn | [linkedin.com/in/mejazmustafavi](https://www.linkedin.com/in/mejazmustafavi) |
+| 💻 GitHub | [github.com/ejazmustafavi-DataAnalyst](https://github.com/ejazmustafavi-DataAnalyst) |
+| 📧 Email | ejazmustafavi@gmail.com |
 
+---
 ## ⭐ Support
 
 If you found this portfolio useful or inspiring, please consider giving this repository a ⭐ on GitHub.
