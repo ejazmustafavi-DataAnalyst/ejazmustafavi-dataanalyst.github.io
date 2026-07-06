@@ -28,10 +28,10 @@ const CERTIFICATES = [
   { name: "Data Analytics by DigiSkill",      file: "DataAnalytics_Certificate_by_DigiSkill.pdf",  issuer: "DigiSkill",   icon: "💡" },
   { name: "Decode Data Analyst",              file: "Decode Data Analyst_Certificate.pdf",          issuer: "Decodelabs",  icon: "🔍" },
   { name: "Nexus Data Analyst",               file: "Nexus Data Analyst Certificate.pdf",           issuer: "Nexus AI",    icon: "🤖" },
-  { name: "Power BI with AI",                 file: "PowerBI with AI certificate.pdf",              issuer: "Microsoft",   icon: "📈" },
+  { name: "Power BI with AI",                 file: "PowerBI with AI certificate.pdf",              issuer: "Exodus Experts",   icon: "📈" },
   { name: "Power BI Certificate",             file: "powerBI certificate.pdf",                      issuer: "Microsoft",   icon: "📉" },
-  { name: "Advanced MS Excel",                file: "advance ms excel Certificate .pdf",            issuer: "Microsoft",   icon: "📗" },
-  { name: "Certified Data Analytics & BI",    file: "Certified in Data Analytics.pdf",              issuer: "Coursera",    icon: "🏅" },
+  { name: "Advanced MS Excel",                file: "advance ms excel Certificate.pdf",            issuer: "Alpha Training Center Qatar",   icon: "📗" },
+  { name: "creative writing certificate",    file: "creative writing certificate.pdf",              issuer: "DigiSkill",    icon: "🏅" },
 ];
 
 const TAG_META = {
