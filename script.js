@@ -13,13 +13,15 @@ const EXCLUDED_REPOS = [
 ];
 
 const PINNED = [
+  "Nexus_AI_internship_projects",
+  "Decodelabs_internship_projects",
   "BankDataAnalysisPBI",
   "CreditCardFinancialReportPBI",
-  "EDA_For_TitanicDataset",
+   "CarSaleAnalysis",
+  "Adventure_Work_Sale",
   "HR_DataAnalyticsDashboard",
-  "NexusDataScience",
-  "StoreDashboardExcel"
-];
+  "SaleProfitExcel"
+]; 
 
 const CERTIFICATES = [
   { name: "Google Data Analytics Professional Certificate",             file: "Google DataAnalytics_certificate.pdf",        issuer: "Google",      icon: "🎓" },
