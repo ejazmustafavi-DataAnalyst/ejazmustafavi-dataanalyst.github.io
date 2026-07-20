@@ -25,7 +25,7 @@ const PINNED = [
 
 const CERTIFICATES = [
   { name: "Google Data Analytics Professional Certificate",            file: "Google DataAnalytics_certificate.pdf",        issuer: "Google",      icon: "🎓" },
-  { name: "AI using Python Certificate by DigiSkill ",              file: "AI using Python Certificate.pdf",  issuer: "DigiSkill",   icon: "💡" },
+  { name: "AI using Python Certificate by DigiSkill ",              file: "AI_using_Python_Certificate.pdf",  issuer: "DigiSkill",   icon: "💡" },
   { name: "Google Business Intelligence Certificate",                   file: "google business intelligence.pdf",             issuer: "Google",      icon: "📊" },
   { name: "Data Analytics & Business Intelligence Certificate by DigiSkill ",      file: "DataAnalytics_Certificate_by_DigiSkill.pdf",  issuer: "DigiSkill",   icon: "💡" },
   { name: "Google Batch Certificate",                                   file: "google batch.pdf",                             issuer: "Google",      icon: "📋" },
