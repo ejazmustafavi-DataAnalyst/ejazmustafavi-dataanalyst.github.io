@@ -34,6 +34,7 @@ const CERTIFICATES = [
   { name: "Power BI & AI Certificate",                                file: "PowerBI with AI certificate.pdf",              issuer: "Exodus Experts",   icon: "📈" },
   { name: "Power BI Certificate",                                  file: "powerBI certificate.pdf",                      issuer: "Anexas Europe(UAE)",   icon: "📉" },
   { name: "Advanced MS Excel Certificate",                         file: "advance ms excel Certificate.pdf",            issuer: "Microsoft",   icon: "📗" },
+  { name: "Claude 101 course Certificate by Anthropic",            file: "Claude 101 course Certificate_by_Anthropic.pdf",            issuer: "Anthropic",   icon: "📗" },
   { name: "Creative Writing Certificate",                         file: "creative writing certificate.pdf",              issuer: "DigiSkill",    icon: "🏅" },
 ];
 
