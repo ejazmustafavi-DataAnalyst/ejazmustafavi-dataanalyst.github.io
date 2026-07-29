@@ -419,8 +419,10 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .card-actions {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-top: 4px;
 }
 .share-li {
@@ -443,7 +445,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   gap: 6px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
+  font-size: 12px;  /* ← change this */
   font-weight: 600;
   color: var(--navy);
   margin-top: 4px;
