@@ -13,6 +13,7 @@ const EXCLUDED_REPOS = [
 ];
 
 const PINNED = [
+  "CDM-analytics-dashboard",
   "Nexus_AI_internship_projects",
   "Decodelabs_internship_projects",
   "BankDataAnalysisPBI",
