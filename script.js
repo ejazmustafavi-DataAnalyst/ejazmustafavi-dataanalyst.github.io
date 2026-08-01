@@ -25,18 +25,18 @@ const PINNED = [
 ];
 
 const CERTIFICATES = [
-  { name: "Google Data Analytics Professional Certificate",            file: "Google DataAnalytics_certificate.pdf",        issuer: "Google",      icon: "🎓" },
-  { name: "AI using Python Certificate by DigiSkill ",              file: "AI_using_Python_Certificate.pdf",  issuer: "DigiSkill",   icon: "💡" },
-  { name: "Google Business Intelligence Certificate",                   file: "google business intelligence.pdf",             issuer: "Google",      icon: "📊" },
-  { name: "Data Analytics & Business Intelligence Certificate by DigiSkill ",      file: "DataAnalytics_Certificate_by_DigiSkill.pdf",  issuer: "DigiSkill",   icon: "💡" },
-  { name: "Google Batch Certificate",                                   file: "google batch.pdf",                             issuer: "Google",      icon: "📋" },
-  { name: "DecodeLabs Data Analyst internship Certificate",              file: "Decode Data Analyst_Certificate.pdf",          issuer: "Decodelabs",  icon: "🔍" },
-  { name: "Nexus Data Analyst internship Certificate",                  file: "Nexus Data Analyst Certificate.pdf",           issuer: "Nexus AI",    icon: "🤖" },
-  { name: "Power BI & AI Certificate",                                file: "PowerBI with AI certificate.pdf",              issuer: "Exodus Experts",   icon: "📈" },
-  { name: "Power BI Certificate",                                  file: "powerBI certificate.pdf",                      issuer: "Anexas Europe(UAE)",   icon: "📉" },
-  { name: "Advanced MS Excel Certificate",                         file: "advance ms excel Certificate.pdf",            issuer: "Microsoft",   icon: "📗" },
-  { name: "Claude 101 course Certificate by Anthropic",            file: "Claude 101 course Certificate_by_Anthropic.pdf",            issuer: "Anthropic",   icon: "📗" },
-  { name: "Creative Writing Certificate",                         file: "creative writing certificate.pdf",              issuer: "DigiSkill",    icon: "🏅" },
+  { name: "Google Data Analytics Professional Certificate",               file: "Google DataAnalytics_certificate.pdf",               issuer: "Google",                      icon: "🎓" },
+  { name: "AI using Python Certificate by DigiSkill",                     file: "AI_using_Python_Certificate.pdf",                     issuer: "DigiSkill",                   icon: "💡" },
+  { name: "Google Business Intelligence Certificate",                     file: "google business intelligence.pdf",                    issuer: "Google",                      icon: "📊" },
+  { name: "Data Analytics & Business Intelligence Certificate by DigiSkill", file: "DataAnalytics_Certificate_by_DigiSkill.pdf",       issuer: "DigiSkill",                   icon: "💡" },
+  { name: "Google Batch Certificate",                                     file: "google batch.pdf",                                    issuer: "Google",                      icon: "📋" },
+  { name: "DecodeLabs Data Analyst Internship Certificate",               file: "Decode Data Analyst_Certificate.pdf",                 issuer: "Decodelabs",                  icon: "🔍" },
+  { name: "Nexus Data Analyst Internship Certificate",                    file: "Nexus Data Analyst Certificate.pdf",                  issuer: "Nexus AI",                    icon: "🤖" },
+  { name: "Power BI & AI Certificate",                                    file: "PowerBI with AI certificate.pdf",                     issuer: "Exodus Experts",              icon: "📈" },
+  { name: "Power BI Certificate",                                         file: "powerBI certificate.pdf",                             issuer: "Anexas Europe (UAE)",         icon: "📉" },
+  { name: "Advanced MS Excel Certificate",                                file: "advance ms excel Certificate.pdf",                    issuer: "Microsoft",                   icon: "📗" },
+  { name: "Claude 101 Course Certificate by Anthropic",                   file: "Claude 101 course Certificate_by_Anthropic.pdf",      issuer: "Anthropic",                   icon: "🤖" },
+  { name: "Creative Writing Certificate",                                 file: "creative writing certificate.pdf",                    issuer: "DigiSkill",                   icon: "🏅" },
 ];
 
 const TAG_META = {
@@ -95,55 +95,51 @@ function buildCertificates() {
   grid.innerHTML = "";
 
   CERTIFICATES.forEach(cert => {
-    const pdfUrl = `${RAW_BASE}/certificates/${encodeURIComponent(cert.file)}`;
+    const pdfUrl  = `${RAW_BASE}/certificates/${encodeURIComponent(cert.file)}`;
     const pngName = cert.file.replace(/\.pdf$/i, ".png");
     const imgUrl  = `${RAW_BASE}/certificates/${encodeURIComponent(pngName)}`;
 
-    // card
-    const card = document.createElement("div");
+    const card  = document.createElement("div");
     card.className = "cert-card";
 
-    // thumb
     const thumb = document.createElement("div");
     thumb.className = "cert-thumb cert-thumb-img";
 
     const img = document.createElement("img");
-    img.src = imgUrl;
-    img.alt = cert.name;
+    img.src     = imgUrl;
+    img.alt     = cert.name;
     img.loading = "lazy";
     img.addEventListener("error", function() {
-      // image failed — fall back to emoji icon
       thumb.classList.remove("cert-thumb-img");
       thumb.innerHTML = cert.icon;
     });
     thumb.appendChild(img);
 
-    // body
-    const body = document.createElement("div");
+    const body   = document.createElement("div");
     body.className = "cert-body";
 
-    const name = document.createElement("p");
-    name.className = "cert-name";
+    const name   = document.createElement("p");
+    name.className   = "cert-name";
     name.textContent = cert.name;
 
     const issuer = document.createElement("p");
-    issuer.className = "cert-issuer";
+    issuer.className   = "cert-issuer";
     issuer.textContent = cert.issuer;
 
     const actions = document.createElement("div");
     actions.className = "cert-actions";
 
     const viewLink = document.createElement("a");
-    viewLink.className = "cert-link";
-    viewLink.href = pdfUrl;
-    viewLink.target = "_blank";
-    viewLink.rel = "noopener";
+    viewLink.className   = "cert-link";
+    viewLink.href        = pdfUrl;
+    viewLink.target      = "_blank";
+    viewLink.rel         = "noopener";
     viewLink.textContent = "View ↗";
 
     const dlLink = document.createElement("a");
-    dlLink.className = "cert-link cert-download";
-    dlLink.href = pdfUrl;
-    dlLink.download = "";
+    dlLink.className   = "cert-link cert-download";
+    dlLink.href        = pdfUrl;
+    dlLink.download    = "";
     dlLink.textContent = "Download PDF ↓";
 
     actions.appendChild(viewLink);
@@ -151,7 +147,6 @@ function buildCertificates() {
     body.appendChild(name);
     body.appendChild(issuer);
     body.appendChild(actions);
-
     card.appendChild(thumb);
     card.appendChild(body);
     grid.appendChild(card);
@@ -171,9 +166,9 @@ function buildFilters(repos) {
   bar.innerHTML = "";
   chips.forEach(chip => {
     const btn = document.createElement("button");
-    btn.className = "chip" + (chip.key === activeFilter ? " active" : "");
+    btn.className   = "chip" + (chip.key === activeFilter ? " active" : "");
     btn.textContent = chip.label;
-    btn.type = "button";
+    btn.type        = "button";
     btn.addEventListener("click", () => {
       activeFilter = chip.key;
       bar.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
@@ -187,8 +182,11 @@ function buildFilters(repos) {
 /* ============================================
    PROJECT CARDS
    ============================================ */
+const LI_ICON = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
+const FB_ICON = `<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.994 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>`;
+
 function renderCards(repos) {
-  const grid = $("cardGrid");
+  const grid  = $("cardGrid");
   const empty = $("emptyState");
   if (!grid) return;
 
@@ -200,12 +198,13 @@ function renderCards(repos) {
   if (empty) empty.hidden = filtered.length !== 0;
 
   filtered.forEach((repo, i) => {
-    const tags = getTags(repo);
-    const tag = tags[0];
-    const meta = TAG_META[tag];
+    const tags     = getTags(repo);
+    const tag      = tags[0];
+    const meta     = TAG_META[tag];
     const isPinned = PINNED.includes(repo.name);
-
     const thumbSrc = `${THUMB_BASE}${encodeURIComponent(repo.name)}.png`;
+    const liUrl    = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(repo.html_url)}`;
+    const fbUrl    = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(repo.html_url)}`;
 
     const card = document.createElement("article");
     card.className = "card";
@@ -215,7 +214,7 @@ function renderCards(repos) {
           src="${thumbSrc}"
           alt="${escHtml(repo.name)} preview"
           loading="lazy"
-          onerror="if(this.src !== '${THUMB_FALLBACK}'){this.src='${THUMB_FALLBACK}';}else{this.closest('.card-thumb').style.display='none';}"
+          onerror="if(this.src!=='${THUMB_FALLBACK}'){this.src='${THUMB_FALLBACK}';}else{this.closest('.card-thumb').style.display='none';}"
         >
       </div>
       <div class="card-accent" style="background:${meta.color}"></div>
@@ -233,15 +232,11 @@ function renderCards(repos) {
           <span>★ ${repo.stargazers_count}</span>
           <span>${relativeTime(repo.pushed_at)}</span>
         </div>
-        <a class="card-link" href="${repo.html_url}" target="_blank" rel="noopener">View on GitHub ↗</a>
-<a class="card-link share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(repo.html_url)}" target="_blank" rel="noopener">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-  LinkedIn
-</a>
-<a class="card-link share-fb" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(repo.html_url)}" target="_blank" rel="noopener">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.994 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-  Facebook
-</a>
+        <div class="card-actions">
+          <a class="card-link" href="${repo.html_url}" target="_blank" rel="noopener">View on GitHub ↗</a>
+          <a class="card-link share-li" href="${liUrl}" target="_blank" rel="noopener">${LI_ICON} LinkedIn</a>
+          <a class="card-link share-fb" href="${fbUrl}" target="_blank" rel="noopener">${FB_ICON} Facebook</a>
+        </div>
       </div>`;
 
     grid.appendChild(card);
@@ -302,7 +297,6 @@ function initNav() {
    ============================================ */
 async function init() {
   document.getElementById("footerYear").textContent = new Date().getFullYear();
-
   buildCertificates();
   initNav();
   showSkeletons(6);
