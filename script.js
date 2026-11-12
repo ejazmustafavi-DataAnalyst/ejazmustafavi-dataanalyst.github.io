@@ -25,6 +25,7 @@ const PINNED = [
 ];
 
 const CERTIFICATES = [
+  { name: "Power BI Program Certificate",                                 file: "MuhammadEjaz_PowerBI.pdf",               issuer: "Accounts Expert",                      icon: "🎓" },
   { name: "Google Data Analytics Professional Certificate",               file: "Google DataAnalytics_certificate.pdf",               issuer: "Google",                      icon: "🎓" },
   { name: "AI using Python Certificate by DigiSkill",                     file: "AI_using_Python_Certificate.pdf",                     issuer: "DigiSkill",                   icon: "💡" },
   { name: "Google Business Intelligence Certificate",                     file: "google business intelligence.pdf",                    issuer: "Google",                      icon: "📊" },
