@@ -17,11 +17,11 @@ const PINNED = [
   "Nexus_AI_internship_projects",
   "Decodelabs_internship_projects",
   "ShopKart_India_Ecommerce",
+  "ATM_Transaction_Analysis_Power-BI",
   "CreditCardFinancialReportPBI",
   "CarSaleAnalysis",
-  "ATM_Transaction_Analysis_Power-BI",
-  "HR_DataAnalyticsDashboard",
-  "Marketing_Analytics_Dashboard_by_Power_BI"
+  "Marketing_Analytics_Dashboard_by_Power_BI",
+  "HR_DataAnalyticsDashboard"
 ];
 
 const CERTIFICATES = [
