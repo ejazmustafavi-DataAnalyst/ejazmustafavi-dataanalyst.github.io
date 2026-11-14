@@ -311,10 +311,15 @@ async function init() {
       .filter(r => !r.fork)
       .filter(r => !EXCLUDED_REPOS.map(e => e.toLowerCase()).includes(r.name.toLowerCase()))
       .sort((a, b) => {
-        const aPin = PINNED.includes(a.name) ? 0 : 1;
-        const bPin = PINNED.includes(b.name) ? 0 : 1;
-        if (aPin !== bPin) return aPin - bPin;
-        return new Date(b.pushed_at) - new Date(a.pushed_at);
+  const aIdx = PINNED.indexOf(a.name);
+  const bIdx = PINNED.indexOf(b.name);
+  const aPin = aIdx !== -1;
+  const bPin = bIdx !== -1;
+
+  if (aPin && bPin) return aIdx - bIdx;   // both pinned: follow PINNED list order
+  if (aPin) return -1;                    // pinned before unpinned
+  if (bPin) return 1;
+  return new Date(b.pushed_at) - new Date(a.pushed_at);  // others: newest first
       });
 
     buildFilters(allRepos);
