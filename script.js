@@ -16,12 +16,12 @@ const PINNED = [
   "CDM-analytics-dashboard",
   "Nexus_AI_internship_projects",
   "Decodelabs_internship_projects",
-  "BankDataAnalysisPBI",
+  "ShopKart_India_Ecommerce",
   "CreditCardFinancialReportPBI",
   "CarSaleAnalysis",
-  "Adventure_Work_Sale",
+  "ATM_Transaction_Analysis_Power-BI",
   "HR_DataAnalyticsDashboard",
-  "SaleProfitExcel"
+  "Marketing_Analytics_Dashboard_by_Power_BI"
 ];
 
 const CERTIFICATES = [
